@@ -10,4 +10,6 @@ func main() {
 
 	fmt.Println("Hello ", fName, " ", lName, ". You are ", age, " years old")
 
+	// ok Error Idiom
+
 }
