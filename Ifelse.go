@@ -1,13 +1,13 @@
 package main
 
-import fmt
+import "fmt"
 
 func calculateAge(yearOfBirth int) int {
 	return 2024 - yearOfBirth
 }
 
 func main() {
-	var user ,_, calculateAge string = "Student", "Sam" , calculateAge(2008)
+	var user string, calculateAge int = "Student", calculateAge(2008)
 
 	if user == "Student" {
 		
