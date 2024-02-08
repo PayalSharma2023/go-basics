@@ -10,16 +10,23 @@ func main() {
 	var user ,_, calculateAge string = "Student", "Sam" , calculateAge(2008)
 
 	if user == "Student" {
+		
 		fmt.Println("Access Granted")
+		
 	} else {
+		
 		fmt.Println("Access Denied")
 	}
 
-	if age := calculateAge(2004); age > 18 {
+	if age == calculateAge(2004); age > 18 {
+		
 		fmt.Println("Adult")
+		
 	} else if age == 100 {
-     fmt.Println("Congratulations for Century")
-  } else {
+		
+		fmt.Println("Congratulations for Century")
+	
+	} else {
 		fmt.Println("Child")
 	}
 }
