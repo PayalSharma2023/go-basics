@@ -17,7 +17,7 @@ func main() {
 
 	if age := calculateAge(2004); age > 18 {
 		fmt.Println("Adult")
-	} else if age := 100 {
+	} else if age == 100 {
      fmt.Println("Congratulations for Century")
   } else {
 		fmt.Println("Child")
