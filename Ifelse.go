@@ -8,7 +8,7 @@ func calculateAge(yearOfBirth int) int {
 
 func main() {
 	var user string = "PS"
-	var Age int =  calculateAge(2008)
+	var age int =  calculateAge(2008)
 
 	if user == "Student" {
 		
