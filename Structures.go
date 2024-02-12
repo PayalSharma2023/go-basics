@@ -7,6 +7,6 @@ type Student struct{
   name   string 
 }
 func main () {
-  student1 := Student(11256, "Payal")
+  student1 := Student{11256, "Payal"}
   fmt.Println(student1)
 }
