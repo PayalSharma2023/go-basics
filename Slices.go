@@ -18,7 +18,7 @@ func main() {
   printRoute(route)
 
   fmt.println()
-  smallroute = route[0:2]
+  smallroute := route[0:2]
   printRoute(smallroute)
   
 }
