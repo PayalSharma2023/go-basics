@@ -3,31 +3,38 @@ package main
 import "fmt"
 
 func main() {
-  Student := map [string] int {
-    "Leonardo" : 112325, 
-    "Darwin" : 536372,
-    "Priya" : 73839,
+  // Correct the map declaration using equals signs instead of colons
+  Student := map[string]int{
+    "Leonardo":  112325,
+    "Darwin":   536372,
+    "Priya":    73839,
   }
 
+  // Use the correct Println function from the fmt package
   for key, value := range Student {
-    fmt.println(key, " " , value)
+    fmt.Println(key, " ", value)
   }
 
-  fmt.println()
+  fmt.Println()
+
+  // Create a new map for snacks and use equals signs for assignment
   snacks := make(map[int]string)
-  snacks[1] := "Chips",
-  snacks[2] := "Creamrole"
+  snacks[1] = "Chips"
+  snacks[2] = "Creamrole"
 
-  delete(snacks, 2)
+  // Delete the snack with key  2
+  delete(snacks,  2)
 
+  // Iterate over the snacks map and print its contents
   for key, value := range snacks {
-    fmt.println(key, " ", value)
+    fmt.Println(key, " ", value)
   }
 
-  _, found := Student[112325]
+  // Correctly check for a student by using a string key
+  _, found := Student["Leonardo"]
   if !found {
-    fmt.println("No student found")
+    fmt.Println("No student found")
   } else {
-    fmt.println("student found")
+    fmt.Println("student found")
   }
 }
