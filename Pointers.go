@@ -14,5 +14,6 @@ func IncreaseCounter(counter *Counter) {
 func main() {
 	counterOne = Counter{}
 	IncreaseCounter(&counterOne)
+	fmt.println()
 	fmt.Println(counterOne.hits)
 }
