@@ -44,9 +44,22 @@ func main() {
 	HighScore = append(HighScore[:3], HighScore[4:]...)
 	fmt.Println(HighScore)
 	//based on index
-	var courses = []string {"reactjs", "js", "swift", "python", "ruby"}
+	var courses = []string{"reactjs", "js", "swift", "python", "ruby"}
 	fmt.Println(courses)
 	var index int = 2
-	courses = append(courses[:index], courses[index + 1:]... ) // ... is symbol of variadics
+	courses = append(courses[:index], courses[index+1:]...) // ... is symbol of variadics
 	fmt.Println(courses)
+
+	days := []string{"Mon", "Tue", "Wed", "Fri", "Thurs"}
+	for i := 0; i < len(days); i++ {
+		fmt.Println(days[i])
+	}
+
+	for _, i := range days{
+		fmt.Println(i)
+	}
+
+	for index, days := range days{
+		fmt.Printf("index is %v and day is %v \n", index, days)
+	}
 }
