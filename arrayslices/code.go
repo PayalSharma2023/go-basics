@@ -39,4 +39,14 @@ func main() {
 
 	fmt.Println(HighScore)
 	fmt.Println(sort.IntsAreSorted(HighScore))
+
+	//to remove value from slice
+	HighScore = append(HighScore[:3], HighScore[4:]...)
+	fmt.Println(HighScore)
+	//based on index
+	var courses = []string {"reactjs", "js", "swift", "python", "ruby"}
+	fmt.Println(courses)
+	var index int = 2
+	courses = append(courses[:index], courses[index + 1:]... ) // ... is symbol of variadics
+	fmt.Println(courses)
 }
