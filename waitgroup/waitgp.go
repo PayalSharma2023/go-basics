@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"sync"
 )
@@ -27,16 +28,27 @@ func main() {
 func getStatusCode(endPoint string) {
 	defer wg.Done()
 	res, err := http.Get(endPoint)
-
 	if err != nil {
-		fmt.Println("OOPS in endpoint")
-	} else {
-		mut.Lock()
-		signals := append(signals, endPoint)
-		mut.Unlock()
-		fmt.Printf("%d status code for %s\n", res.StatusCode, endPoint)
-		fmt.Println(signals)
+		fmt.Printf("Error fetching %s: %v\n", endPoint, err)
+		return
+		// fmt.Println("OOPS in endpoint")
+	} 
+
+	defer res.Body.Close()
+
+	_, err = ioutil.ReadAll(res.Body)
+	if err != nil {
+		fmt.Printf("Error reading response body for %s: %v\n", endPoint, err)
+		return
 	}
+
+	// mut.Lock()
+	// res = append(res, endPoint)
+	// mut.Unlock()
+	mut.Lock()
+	fmt.Printf("%d status code for %s\n", res.StatusCode, endPoint)
+	mut.Unlock()
+	
 	//%d for integer and %s for string
 
 }
