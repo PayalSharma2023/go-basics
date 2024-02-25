@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os/signal"
 	"sync"
 )
 
-var wg sync.WaitGroup
-
+var wg sync.WaitGroup //pointer
+var mut sync.Mutex  //pointer
 func main() {
 	websitelist := []string{
 		"https://lco.dev",
@@ -31,7 +32,11 @@ func getStatusCode(endPoint string) {
 	if err != nil {
 		fmt.Println("OOPS in endpoint")
 	} else {
+		mut.Lock()
+		signals := append(signal, endPoint)
+		mut.Unlock()
 		fmt.Printf("%d status code for %s\n", res.StatusCode, endPoint)
+		fmt.Println(signals)
 	}
 	//%d for integer and %s for string
 
