@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"os/signal"
 	"sync"
 )
 
@@ -33,7 +32,7 @@ func getStatusCode(endPoint string) {
 		fmt.Println("OOPS in endpoint")
 	} else {
 		mut.Lock()
-		signals := append(signal, endPoint)
+		signals := append(signals, endPoint)
 		mut.Unlock()
 		fmt.Printf("%d status code for %s\n", res.StatusCode, endPoint)
 		fmt.Println(signals)
